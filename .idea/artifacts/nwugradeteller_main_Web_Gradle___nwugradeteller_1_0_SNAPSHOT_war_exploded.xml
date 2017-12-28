@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="nwugradeteller_main:Web Gradle : nwugradeteller-1.0-SNAPSHOT.war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/nwugradeteller_main_Web_Gradle___nwugradeteller_1_0_SNAPSHOT_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="nwugradeteller_main/web/Web Gradle : nwugradeteller-1.0-SNAPSHOT.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="nwugradeteller_main" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
