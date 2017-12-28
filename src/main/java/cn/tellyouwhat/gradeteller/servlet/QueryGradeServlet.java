@@ -16,6 +16,13 @@ public class QueryGradeServlet extends HttpServlet {
             throws ServletException, IOException {
         String studentNumber = request.getParameter("stu-num");
 
+        String checked = request.getParameter("agreement");
+        if (checked == null) {
+            request.setAttribute("errorMessage", "您必须要同意条款才能继续！");
+            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
+                    .forward(request, response);
+        }
+
         if ("".equals(studentNumber) || studentNumber == null) {
             request.setAttribute("errorMessage", "请输入学号再试！");
             request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
