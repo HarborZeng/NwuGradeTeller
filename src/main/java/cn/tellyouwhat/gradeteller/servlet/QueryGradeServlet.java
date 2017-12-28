@@ -16,16 +16,36 @@ public class QueryGradeServlet extends HttpServlet {
             throws ServletException, IOException {
         String studentNumber = request.getParameter("stu-num");
 
+        if ("".equals(studentNumber) || studentNumber == null) {
+            request.setAttribute("errorMessage", "请输入学号再试！");
+            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
+                    .forward(request, response);
+            return;
+        }else if(studentNumber.length() < 10) {
+            request.setAttribute("errorMessage", "输入的学号长度不足");
+            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
+                    .forward(request, response);
+            return;
+        }
+
         MURPNewsService service = new MURPNewsService();
         MURPNewsServiceSoap serviceSoap = service.getMURPNewsServiceSoap();
         ArrayOfMurpcustomi userinfo = serviceSoap.searchUser(
                 studentNumber, null, null)
                 .getUserinfo();
+
         if (userinfo == null) {
+            request.setAttribute("errorMessage", "输入的学号不正确！");
+            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
+                    .forward(request, response);
             return;
         }
+
         Murpcustomi user = userinfo.getMurpcustomi().get(0);
         if (user == null) {
+            request.setAttribute("errorMessage", "输入的学号不正确！");
+            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
+                    .forward(request, response);
             return;
         }
 

@@ -25,6 +25,18 @@
                 <input id="student-number" title="学号" placeholder="10位纯数字"
                        maxlength="10" name="stu-num" class="form-control">
             </div>
+            <%--@elvariable id="errorMessage" type="java.lang.String"--%>
+            <c:if test="${not empty errorMessage}">
+                <div class="text-danger harbor-padding">
+                    <span>${errorMessage}</span>
+                </div>
+            </c:if>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="agreement"> 同意软件使用条款
+                    <a href="agreement.html" target="_blank">免责条款</a>
+                </label>
+            </div>
             <button type="submit" class="btn btn-primary btn-lg">查询</button>
         </form>
 
