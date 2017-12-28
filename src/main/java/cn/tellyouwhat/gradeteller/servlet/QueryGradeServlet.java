@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "QueryGradeServlet", urlPatterns = "/queryAllGrade")
@@ -30,15 +29,11 @@ public class QueryGradeServlet extends HttpServlet {
             return;
         }
 
-        PrintWriter writer = response.getWriter();
-
         List<PublicStruct> grades = serviceSoap.mark(
                 Integer.parseInt(user.getMcid())).getPublicStruct();
-        for (PublicStruct grade : grades) {
-            String name = grade.getExtend1();
-            String score = grade.getExtend2();
-            writer.println(name + ": " + score + "\n");
-        }
+        request.setAttribute("grades", grades);
+        request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
+                .forward(request, response);
 
     }
 
