@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <span>
-                            Copyright &copy;
+                            Copyright &copy; HarborZeng
                             <a href="https://tellyouwhat.cn/">tellyouwhat.cn</a>
                         </span> |
                         <span>
