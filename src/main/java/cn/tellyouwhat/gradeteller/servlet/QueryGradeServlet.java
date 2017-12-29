@@ -19,6 +19,7 @@ public class QueryGradeServlet extends HttpServlet {
         String checked = request.getParameter("agreement");
         if (checked == null) {
             addErrorMessage(request, response, "您必须要同意条款才能继续！");
+            return;
         }
 
         if ("".equals(studentNumber) || studentNumber == null) {
