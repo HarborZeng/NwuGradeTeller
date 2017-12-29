@@ -1,6 +1,7 @@
 # NwuGradeTeller
 # 关于NGT
 NGT是一个西北大学的第三方成绩查询系统，仅支持查询当前学期的成绩。
+![preview]()
 
 # 建议运行环境
 - Intellij IDEA 2017.3
@@ -48,3 +49,5 @@ compile group: 'javax.servlet', name: 'jstl', version: '1.2'
 如果还是编码异常，参考[Gradle项目中文乱码的解决办法](http://blog.csdn.net/u011054333/article/details/54175641)
 
 # 法律文件
+[agreement](https://github.com/HarborZeng/NwuGradeTeller/blob/master/src/main/webapp/agreement.html)
+[LICENSE](https://github.com/HarborZeng/NwuGradeTeller/blob/master/LICENSE)
