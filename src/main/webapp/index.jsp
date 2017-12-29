@@ -72,6 +72,9 @@
                                target="_blank">
                             https://github.com/HarborZeng/NwuGradeTeller
                             </a>
+                        </span> |
+                        <span>
+                            此软件仅能以学习交流为目的运行，如果给学校的利益带来任何形式的损失，原作者不负任何责任
                         </span>
                     </div>
                 </div>
