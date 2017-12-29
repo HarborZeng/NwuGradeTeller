@@ -1,7 +1,7 @@
 # NwuGradeTeller
 # 关于NGT
 NGT是一个西北大学的第三方成绩查询系统，仅支持查询当前学期的成绩。
-![preview]()
+![preview](https://github.com/HarborZeng/NwuGradeTeller/blob/master/preview/preview.png)
 
 # 建议运行环境
 - Intellij IDEA 2017.3
@@ -40,12 +40,12 @@ compile group: 'javax.servlet', name: 'jstl', version: '1.2'
 ## 方法2: 使用Intellij IDEA来运行
 - 在Intellij IDEA中打开本项目
 - 配置tomcat运行环境
-[!配置如下]()
+![配置如下](https://github.com/HarborZeng/NwuGradeTeller/blob/master/preview/%E6%9C%AC%E5%9C%B0Tomcat%E8%BF%90%E8%A1%8C.png)
 - 成功运行
 
 ## 方法3：使用Intellij IDEA的Gradle来build
 - 你要是选择这种方法，那你肯定是不需要我再教你怎么做的大佬了，唯一与注意的一点就是加上参数build，以防出错。
-[!加上参数]()
+![加上参数](https://github.com/HarborZeng/NwuGradeTeller/blob/master/preview/%E4%BD%BF%E7%94%A8IDE%E6%9D%A5Build.png)
 如果还是编码异常，参考[Gradle项目中文乱码的解决办法](http://blog.csdn.net/u011054333/article/details/54175641)
 
 # 法律文件
