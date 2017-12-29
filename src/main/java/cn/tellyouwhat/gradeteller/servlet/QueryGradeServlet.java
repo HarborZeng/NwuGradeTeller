@@ -18,20 +18,14 @@ public class QueryGradeServlet extends HttpServlet {
 
         String checked = request.getParameter("agreement");
         if (checked == null) {
-            request.setAttribute("errorMessage", "您必须要同意条款才能继续！");
-            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
-                    .forward(request, response);
+            addErrorMessage(request, response, "您必须要同意条款才能继续！");
         }
 
         if ("".equals(studentNumber) || studentNumber == null) {
-            request.setAttribute("errorMessage", "请输入学号再试！");
-            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
-                    .forward(request, response);
+            addErrorMessage(request, response, "请输入学号再试！");
             return;
         }else if(studentNumber.length() < 10) {
-            request.setAttribute("errorMessage", "输入的学号长度不足");
-            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
-                    .forward(request, response);
+            addErrorMessage(request, response, "输入的学号长度不足");
             return;
         }
 
@@ -42,17 +36,13 @@ public class QueryGradeServlet extends HttpServlet {
                 .getUserinfo();
 
         if (userinfo == null) {
-            request.setAttribute("errorMessage", "输入的学号不正确！");
-            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
-                    .forward(request, response);
+            addErrorMessage(request, response, "输入的学号不正确！");
             return;
         }
 
         Murpcustomi user = userinfo.getMurpcustomi().get(0);
         if (user == null) {
-            request.setAttribute("errorMessage", "输入的学号不正确！");
-            request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
-                    .forward(request, response);
+            addErrorMessage(request, response, "输入的学号不正确！");
             return;
         }
 
@@ -62,6 +52,12 @@ public class QueryGradeServlet extends HttpServlet {
         request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
                 .forward(request, response);
 
+    }
+
+    private void addErrorMessage(HttpServletRequest request, HttpServletResponse response, String s) throws ServletException, IOException {
+        request.setAttribute("errorMessage", s);
+        request.getRequestDispatcher(request.getContextPath() + "/index.jsp")
+                .forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
