@@ -2,7 +2,11 @@
 # 关于NGT
 NGT是一个西北大学的第三方成绩查询系统，仅支持查询当前学期的成绩。
 ![preview](https://github.com/HarborZeng/NwuGradeTeller/blob/master/preview/preview.png)
-
+[![][Build Status img]][Build Status]
+[![][Coverage Status img]][Coverage Status]
+[![][license img]][license]
+[![][Maven Central img]][Maven Central]
+[![][Javadocs img]][Javadocs]
 # 建议运行环境
 - Intellij IDEA 2017.3
 - Tomcat 8.5
